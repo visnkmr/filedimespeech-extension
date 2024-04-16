@@ -11,7 +11,7 @@ function genericOnClick(info, tab) {
    };
    
    // Send to mellotts tts endpoint to play via speaker
-   fetch(`http://127.0.0.1:8963/tts`, {
+   fetch(`http://127.0.0.1:8694/tts`, {
     method: 'POST',
     headers: {
        'Content-Type': 'application/json'
