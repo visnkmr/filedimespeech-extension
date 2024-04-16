@@ -19,7 +19,7 @@ To use FiledimeSpeech:
 1. Select the text you want to hear.
 2. Right-click to open the context menu.
 3. Click on "Play using FiledimeSpeech".
-4. The text will be sent to the MeloTTS endpoint and played through your speakers.
+4. The text will be sent to the Filegpt-filedime which uses MeloTTS model for inference at endpoint and played through your speakers.
 
 ## Customization
 You can customize the TTS endpoint and other parameters by editing the `genericOnClick` function in the `sendtomelotts.js` file.
