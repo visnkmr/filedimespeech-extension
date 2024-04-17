@@ -21,6 +21,8 @@ jobs:
  create_release_and_upload_zips:
     needs: create_zips
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Get Variables (Linux)
         run: |
