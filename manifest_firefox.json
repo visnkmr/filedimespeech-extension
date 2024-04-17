@@ -1,0 +1,21 @@
+{
+  "name": "Filedime Speech",
+  "description": "Show filedime speech option in context menu",
+  "version": "0.1",
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "activeTab",
+    "<all_urls>"
+],
+  "background": {
+    "scripts": ["sendtomelo.js"]
+  },
+  "manifest_version": 2,
+  "author": "Vishnu N K",
+    "applications": {
+        "gecko": {
+            "id": "filedimespeech@visnkmr.github.io"
+        }
+    }
+}
