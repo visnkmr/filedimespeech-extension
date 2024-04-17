@@ -22,6 +22,9 @@ jobs:
     needs: create_zips
     runs-on: ubuntu-latest
     steps:
+      - name: Get Variables (Linux)
+        run: |
+          echo "TAG=$(echo $GITHUB_REF | sed 's/^refs\/heads\///')" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -36,7 +39,6 @@ jobs:
       - name: Upload chrome_extension.zip to Release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.TOKEN }}
           file: chrome_extension.zip
           asset_name: chrome_extension.zip
           tag: ${{ github.ref }}
@@ -45,7 +47,6 @@ jobs:
       - name: Upload firefox_extension.zip to Release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.TOKEN }}
           file: firefox_extension.zip
           asset_name: firefox_extension.zip
           tag: ${{ github.ref }}
