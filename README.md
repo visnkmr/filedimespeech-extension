@@ -10,9 +10,10 @@ FiledimeSpeech is a Browser extension that adds a context menu option allowing u
 
 ## Installation
 1. Clone the repository or download the ZIP file.
-2. Unpack (if ZIP) and load the extension into Chrome via `chrome://extensions/`.
-3. Enable Developer Mode and click on "Load unpacked".
-4. Select the extension directory.
+2. Change name of manifest file applicable for your browser to manifest.json
+3. Unpack (if ZIP) and load the extension into Chrome via `chrome://extensions/`.
+4. Enable Developer Mode and click on "Load unpacked".
+5. Select the extension directory.
 
 ## Usage
 To use FiledimeSpeech:
