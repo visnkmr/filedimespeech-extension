@@ -26,6 +26,7 @@ jobs:
     steps:
       - name: Get Variables (Linux)
         run: |
+          ls
           echo "TAG=$(echo $GITHUB_REF | sed 's/^refs\/heads\///')" >> $GITHUB_ENV
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
