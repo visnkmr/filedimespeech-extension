@@ -26,7 +26,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
@@ -36,7 +36,7 @@ jobs:
       - name: Upload chrome_extension.zip to Release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.TOKEN }}
           file: chrome_extension.zip
           asset_name: chrome_extension.zip
           tag: ${{ github.ref }}
@@ -45,7 +45,7 @@ jobs:
       - name: Upload firefox_extension.zip to Release
         uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.TOKEN }}
           file: firefox_extension.zip
           asset_name: firefox_extension.zip
           tag: ${{ github.ref }}
