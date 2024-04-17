@@ -18,6 +18,15 @@ jobs:
       - name: Run script to create ZIP files
         run: ./create_zips.sh
 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: chrome_extension.zip
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: firefox_extension.zip
+
  create_release_and_upload_zips:
     needs: create_zips
     runs-on: ubuntu-latest
@@ -28,14 +37,6 @@ jobs:
         run: |
           ls
           echo "TAG=$(echo $GITHUB_REF | sed 's/^refs\/heads\///')" >> $GITHUB_ENV
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          path: chrome_extension.zip
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          path: firefox_extension.zip
       - name: Upload chrome_extension.zip to Release
         uses: svenstaro/upload-release-action@v2
         with:
